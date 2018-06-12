@@ -7,11 +7,26 @@
  */
 
  function firstReverse(str) {
-     var newStr = "";
+    var newStr = "";
+
      for (var i = str.length -1; i >= 0; i--) {
          newStr += str[i];
      }
-     return newStr;
+    //  return newStr;
+    // if (str !== "") {
+    //     return null;
+    // } else {
+    //     for (var i = str.length -1; i >= 0; i--) {
+    //         newStr += str[i];
+    //     }
+    //  }
+    //  return newStr;
+    if (typeof str === 'string') {
+        return newStr;
+    } else {
+        return null;
+    }
+
  }
 
  /** Function: alphaOrder
@@ -26,7 +41,12 @@ function alphaOrder(str) {
     var arr = str.split('');
     var sortArr = arr.sort();
     var newStr = sortArr.join('');
-    return newStr;
+
+    if (typeof str === 'string') {
+        return newStr;
+    } else {
+        return null;
+    }
 }
 
  /** Function: vowelCount
@@ -40,12 +60,15 @@ function alphaOrder(str) {
  function vowelCount(num) {
      var count = 0;
      for (var i = 0; i < num.length; i++) {
-        if (num[i].match(/[aeiou]/gi)) {
-            count += 1;
+        if (typeof str === 'string'){
+            if (num[i].match(/[aeiou]/gi)) {
+                count += 1;
+            }  return count;
+        } else {
+            return null;
         }
-    }
-    return count;
  }
+}
 
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
@@ -57,7 +80,12 @@ function alphaOrder(str) {
  */
 
  function timeConvert(str) {
-
+    var num = str;
+    var hrs = (num/60);
+    var hours = Math.floor(hrs);
+    var min = (hrs - hours) * 60;
+    var minutes = Math.round(min);
+    return hours + ":" + minutes;
  }
 
 
