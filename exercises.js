@@ -56,6 +56,11 @@ function alphaOrder(str) {
  * ie: 68 => 1:8
  */
 
+ function timeConvert(str) {
+
+ }
+
+
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
  * num times (second argument). Return an empty string if num is a negative number
@@ -64,6 +69,14 @@ function alphaOrder(str) {
  * @return {string} repeated num times
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
+
+ function repeatString(str, times) {
+     if (times < 0) {
+         return "";
+     } else {
+         return str.repeat(times);
+     }
+ }
 
 
 /**
@@ -84,6 +97,6 @@ module.exports = {
     firstReverse: firstReverse,
     alphaOrder: alphaOrder,
     vowelCount: vowelCount,
-    timeConvert: null,
-    repeatString: null
+    timeConvert: timeConvert,
+    repeatString: repeatString
 }
