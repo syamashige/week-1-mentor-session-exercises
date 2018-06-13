@@ -12,7 +12,13 @@
      for (var i = str.length -1; i >= 0; i--) {
          newStr += str[i];
      }
-    //  return newStr;
+    if (typeof str === 'string') {
+        return newStr;
+    } else {
+        return null;
+    }
+ }
+     //  return newStr;
     // if (str !== "") {
     //     return null;
     // } else {
@@ -21,13 +27,6 @@
     //     }
     //  }
     //  return newStr;
-    if (typeof str === 'string') {
-        return newStr;
-    } else {
-        return null;
-    }
-
- }
 
  /** Function: alphaOrder
  * The function will take the str parameter being passed in and
@@ -38,12 +37,11 @@
  */
 
 function alphaOrder(str) {
-    var arr = str.split('');
-    var sortArr = arr.sort();
-    var newStr = sortArr.join('');
-
-    if (typeof str === 'string') {
-        return newStr;
+    // var arr = str.split('');
+    // var sortArr = arr.sort();
+    // var newStr = sortArr.join('');
+    if (typeof str === typeof '') {
+        return str.split('').sort().join('');
     } else {
         return null;
     }
@@ -57,18 +55,30 @@ function alphaOrder(str) {
  * ie: "oreo" => 3
  */
 
- function vowelCount(num) {
-     var count = 0;
-     for (var i = 0; i < num.length; i++) {
-        if (typeof str === 'string'){
-            if (num[i].match(/[aeiou]/gi)) {
-                count += 1;
-            }  return count;
-        } else {
-            return null;
+//  function vowelCount(num) {
+//      var count = 0;
+//      for (var i = 0; i < num.length; i++) {
+//         if (typeof str === 'string'){
+//             if (num[i].match(/[aeiou]/gi)) {
+//                 count += 1;
+//             }  return count;
+//         } else {
+//             return null;
+//         }
+//  }
+// }
+
+
+function vowelCount(num) {
+    var count = 0; 
+    for (var i = 0; i < num.length; i++) {
+        if (num[i].match(/[aeiou]/gi)) {
+            count += 1;
         }
- }
+    }
+    return count;
 }
+
 
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
