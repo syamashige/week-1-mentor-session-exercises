@@ -90,12 +90,22 @@ function vowelCount(num) {
  */
 
  function timeConvert(str) {
-    var num = str;
-    var hrs = (num/60);
-    var hours = Math.floor(hrs);
-    var min = (hrs - hours) * 60;
-    var minutes = Math.round(min);
-    return hours + ":" + minutes;
+     if (typeof str === '') {
+        var num = str;
+        var hrs = (num/60);
+        var hours = Math.floor(hrs);
+        var min = (hrs - hours) * 60;
+        var minutes = Math.round(min);
+        return hours + ":" + minutes;
+     } else {
+         return null;
+     }
+    // var num = str;
+    // var hrs = (num/60);
+    // var hours = Math.floor(hrs);
+    // var min = (hrs - hours) * 60;
+    // var minutes = Math.round(min);
+    // return hours + ":" + minutes;
  }
 
 
